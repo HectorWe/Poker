@@ -12,11 +12,7 @@ import static us.mattgreen.poker.Suit.*;
  * @version 1.0
  */
 public class Game {
-    /**
-     *
-     * @param hand An Array of Cards
-     * @return True if there are two of a kind and false if not
-     */
+
 
     List<Card> hand = new ArrayList<>();
 
@@ -32,6 +28,12 @@ public class Game {
         Arrays.sort( T , (a, b) -> a.getFace().compareTo(b.getFace()));
     }
 
+    /**
+     *
+     * @param hand An Array of Cards
+     * @return True if there are two of a kind and false if not
+     */
+
     public static boolean twoOfAKind(Card[] hand) {
         sortByNumber(hand);
         //Arrays.sort(hand, (a, b) -> a.getFace().compareTo(b.getFace()));
@@ -42,6 +44,12 @@ public class Game {
         }
         return false;
     }
+
+    /**
+     *
+     * @param hand2 An Array of Cards
+     * @return True if there are three of a kind and false if not
+     */
 
     public static boolean threeOfAKind(Card[] hand2) {
         sortByNumber(hand2);
@@ -55,6 +63,12 @@ public class Game {
         return false;
     }
 
+    /**
+     *
+     * @param hand3 An Array of Cards
+     * @return True if there are four of a kind and false if not
+     */
+
     public static boolean fourOfAKind(Card[] hand3) {
         sortByNumber(hand3);
         for(int i=0;i < hand3.length-1; i++) {
@@ -66,6 +80,12 @@ public class Game {
         return false;
     }
 
+    /**
+     *
+     * @param hand4 An Array of Cards
+     * @return True if there is flush of suit and false if not
+     */
+
     public static boolean flush(Card[] hand4) {
         sortByNumber(hand4);
         for(int i=0;i < hand4.length-1; i++) {
@@ -75,6 +95,12 @@ public class Game {
         }
         return true;
     }
+
+    /**
+     *
+     * @param hand5 An Array of Cards
+     * @return True if there is fullHouse and false if not
+     */
 
     public static boolean fullHouse(Card[] hand5) {
         if ( twoOfAKind(hand5)&&threeOfAKind(hand5) ) {
