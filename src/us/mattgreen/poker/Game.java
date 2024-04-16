@@ -3,7 +3,6 @@ package us.mattgreen.poker;
 import java.util.*;
 
 import static us.mattgreen.poker.Face.*;
-import static us.mattgreen.poker.Face.SEVEN;
 import static us.mattgreen.poker.Suit.*;
 
 /**
@@ -12,17 +11,6 @@ import static us.mattgreen.poker.Suit.*;
  * @version 1.0
  */
 public class Game {
-
-
-    List<Card> hand = new ArrayList<>();
-
-    public Game() {
-        hand.add(new Card(JACK,CLUBS, 11));
-        hand.add(new Card(FIVE,CLUBS, 5));
-        hand.add(new Card(JACK,SPADES, 11));
-        hand.add(new Card(FOUR,SPADES, 4));
-        hand.add(new Card(SEVEN,DIAMONDS, 7));
-    }
 
     public static void sortByNumber(Card[] T) {
         Arrays.sort( T , (a, b) -> a.getFace().compareTo(b.getFace()));
@@ -109,12 +97,5 @@ public class Game {
         return false;
     }
 
-    public String getHand() {
-        String hands = "";
-        for (Card card : hand) {
-            hands += card.toString() + "\n";
-        }
-        return hands;
-    }
 
 }
