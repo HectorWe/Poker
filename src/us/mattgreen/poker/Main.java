@@ -17,6 +17,12 @@ public class Main {
                 new Card(FOUR,SPADES, 4),
                 new Card(SEVEN,DIAMONDS, 7)};
 
+        Game.sortByNumber(hand);
+
+        for (Card card : hand) {
+            System.out.println(" - " + card);
+        }
+
         if (Game.twoOfAKind(hand) == true) {
             System.out.println("You have two of kinds!");
         } else if (Game.threeOfAKind(hand) == true) {
@@ -28,7 +34,5 @@ public class Main {
         }else if (Game.fullHouse(hand) == true) {
             System.out.println("You have full house!");
         }
-
-
     }
 }
